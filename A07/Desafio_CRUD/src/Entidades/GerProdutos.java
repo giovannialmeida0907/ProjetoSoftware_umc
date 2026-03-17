@@ -14,10 +14,30 @@ public class GerProdutos {
             System.out.println("Nenhum produto cadastrado");
         } else {
             System.out.println("| ID | NOME | VALOR | QUANTIDADE |");
-            for (Produtos produto :  GerProduto) {
-                System.out.println (produto);
+            for (int i=0; i<GerProduto.size(); i++){
+                System.out.println("|" + i + GerProduto.get(i));
             }
         }
     }
+
+    //alterar produto
+
+    public void alterarProduto(int idProduto, String nome, double preco, int quantidade){
+        Produtos produto = GerProduto.get(idProduto);
+
+        produto.setNome(nome);
+        produto.setPreco(preco);
+        produto.setQuantidade(quantidade);
+
+
+    }
+
+    //remove
+
+    public void excluirProduto(int idProduto){
+        GerProduto.remove(idProduto);
+        System.out.println("Produto excluado com sucesso");
+    }
+
 
 }

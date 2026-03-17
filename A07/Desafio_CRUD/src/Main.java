@@ -37,14 +37,43 @@ public class Main {
             }
 
             case "2" -> {
+                System.out.println("Aqui está a lista de produtos:");
                 produtos.listProdutos();
             }
 
-            case "3" -> {}
+            case "3" -> {
+                System.out.println("Alteração de produto\nEssa é a lista de produtos:");
+                produtos.listProdutos();
 
-            case "4" -> {}
+                int idProduto = sc.nextInt();
+                sc.nextLine();
 
-            case "5" -> {}
+                System.out.println("Digite o nome do produto: ");
+                String nome = sc.nextLine();
+
+                System.out.println("Digite o valor do produto: ");
+                Double preco = sc.nextDouble();
+
+                System.out.println("Digite a quantidade do produto: ");
+                int quantidade = sc.nextInt();
+
+                produtos.alterarProduto(idProduto, nome, preco, quantidade);
+
+            }
+
+            case "4" -> {
+                System.out.println("Remoção de produto(s)\n");
+                produtos.listProdutos();
+                System.out.println("Digite o ID do produto: ");
+                int idProduto = sc.nextInt();
+                sc.nextLine();
+                produtos.excluirProduto(idProduto);
+            }
+
+            case "5" -> {
+                System.out.println("SAIR");
+                return;
+            }
         }
 
     }
