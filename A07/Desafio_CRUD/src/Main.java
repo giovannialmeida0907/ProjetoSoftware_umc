@@ -45,6 +45,7 @@ public class Main {
                 System.out.println("Alteração de produto\nEssa é a lista de produtos:");
                 produtos.listProdutos();
 
+                System.out.println("Digite o ID do produto: ");
                 int idProduto = sc.nextInt();
                 sc.nextLine();
 
