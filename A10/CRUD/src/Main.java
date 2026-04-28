@@ -22,7 +22,7 @@ public class Main {
 
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // Consumir a nova linha
+                scanner.nextLine();
 
                 switch (opcao) {
                     case 1:
@@ -51,11 +51,11 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, digite um número.");
-                scanner.nextLine(); // Limpar o buffer do scanner
-                opcao = 0; // Para continuar o loop
+                scanner.nextLine();
+                opcao = 0;
             } catch (Exception e) {
                 System.out.println("Ocorreu um erro inesperado: " + e.getMessage());
-                opcao = 0; // Para continuar o loop
+                opcao = 0;
             }
 
         } while (opcao != 7);
@@ -73,7 +73,7 @@ public class Main {
         int quantidade = scanner.nextInt();
         System.out.print("Garantia (meses): ");
         int garantia = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
 
         ProdutoEletronico pe = new ProdutoEletronico(nome, preco, quantidade, garantia);
         gerenciarProdutos.cadastrarProduto(pe);
@@ -88,7 +88,7 @@ public class Main {
         double preco = scanner.nextDouble();
         System.out.print("Quantidade: ");
         int quantidade = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
         System.out.print("Tamanho (P, M, G, GG): ");
         String tamanho = scanner.nextLine();
 
@@ -105,7 +105,7 @@ public class Main {
         double preco = scanner.nextDouble();
         System.out.print("Quantidade: ");
         int quantidade = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
         System.out.print("Data de Validade (AAAA-MM-DD): ");
         String dataValidadeStr = scanner.nextLine();
         LocalDate dataValidade = null;
@@ -125,14 +125,14 @@ public class Main {
         System.out.println("\n--- Atualizar Produto ---");
         System.out.print("ID do produto a ser atualizado: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
         System.out.print("Novo Nome: ");
         String nome = scanner.nextLine();
         System.out.print("Novo Preço: ");
         double preco = scanner.nextDouble();
         System.out.print("Nova Quantidade: ");
         int quantidade = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
 
         try {
             gerenciarProdutos.atualizarProduto(id, nome, preco, quantidade);
@@ -145,7 +145,7 @@ public class Main {
         System.out.println("\n--- Remover Produto ---");
         System.out.print("ID do produto a ser removido: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
 
         try {
             gerenciarProdutos.removerProduto(id);

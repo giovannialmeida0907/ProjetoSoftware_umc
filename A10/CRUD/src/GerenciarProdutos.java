@@ -70,7 +70,6 @@ public class GerenciarProdutos {
     private void carregarProdutos() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(NOME_ARQUIVO))) {
             this.produtos = (ArrayList<Produto>) ois.readObject();
-            // Atualizar o nextId para garantir que novos produtos tenham IDs únicos
             int maxId = -1;
             for (Produto p : produtos) {
                 if (p.getId() > maxId) {
